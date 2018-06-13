@@ -34,14 +34,11 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
   git
+  zsh-autosuggestions 
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# zsh plugins
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /Users/kpeng/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -49,7 +46,7 @@ export EDITOR='vim'
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export PATH=/Users/kpeng/Library/Python/3.6/bin:$PATH
+export PATH=~/Library/Python/3.6/bin:$PATH
 
 autoload -U promptinit; promptinit
 
