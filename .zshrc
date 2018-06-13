@@ -65,6 +65,6 @@ alias json="python -m json.tool"
 eval "$(fasd --init auto)"
 
 # tab completion for colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-alias ls=colorls
-alias l="colorls -lA --sd"
+#source $(dirname $(gem which colorls))/tab_complete.sh
+#alias ls=colorls
+#alias l="colorls -lA --sd"
