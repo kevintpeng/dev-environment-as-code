@@ -5,28 +5,28 @@
   # LINK DOTFILES
   - name: link .vimrc
     file: 
-      src: .vimrc
-      dest: ~/.vimrc
+      dest: .vimrc
+      src: ~/.vimrc
       state: link
   - name: link .zshrc
     file: 
-      src: .zshrc
-      dest: ~/.zshrc
+      dest: .zshrc
+      src: ~/.zshrc
       state: link
   - name: link .tmux.conf
     file: 
-      src: .tmux.conf
-      dest: ~/.tmux.conf
+      dest: .tmux.conf
+      src: ~/.tmux.conf
       state: link
   - name: link .chunkwmrc
     file: 
-      src: .chunkwmrc
-      dest: ~/.chunkwrc
+      dest: .chunkwmrc
+      src: ~/.chunkwrc
       state: link
   - name: link .skhdrc
     file: 
-      src: .skhdrc
-      dest: ~/.skhdrc
+      dest: .skhdrc
+      src: ~/.skhdrc
       state: link
 
   # UTILITIES
