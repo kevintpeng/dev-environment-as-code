@@ -8,7 +8,7 @@ export TERM="xterm-256color"
 if [ "$TMUX" = "" ]; then tmux -2; fi
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kpeng/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
