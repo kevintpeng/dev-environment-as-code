@@ -3,10 +3,6 @@
   become_user: kevintpeng
   tasks:
   # UTILITIES
-  - name: Install vim
-    homebrew:
-      name: vim
-      state: present
   - name: Install tree
     homebrew:
       name: tree
