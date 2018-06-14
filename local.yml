@@ -42,7 +42,7 @@
       name: crisidev/homebrew-chunkwm
       state: present
   - name: Install chunkwm
-    homebrew_cask:
+    homebrew:
       name: chunkwm
       state: present
   - name: Install skhd
