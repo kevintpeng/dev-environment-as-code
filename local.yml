@@ -34,6 +34,40 @@
       dest: ~/.skhdrc
       state: hard
 
+  # ASTHETIC
+  #- name: Tap Hack Nerd Font
+  #  homebrew_tap:
+  #    name: caskroom/fonts
+  #    state: present
+  - name: install hack-nerd-font
+    homebrew_cask:
+      pkg: font-hack-nerd-font
+      state: present
+  - name: Install base16 colorscheme
+    git:
+      repo: https://github.com/chriskempson/base16-shell.git
+      dest: ~/.config/base16-shell
+      update: yes
+
+  # WINDOW MANAGER
+  - name: Tap chunkwm 
+    homebrew_tap:
+      name: crisidev/homebrew-chunkwm
+      state: present
+  - name: Install chunkwm
+    homebrew:
+      name: chunkwm
+      state: present
+  - name: Install skhd
+    homebrew:
+      pkg: koekeishiya/formulae/skhd
+      state: present
+      options: HEAD,with-logging
+  - name: Install chunkwm
+    homebrew_cask:
+      pkg: chunkwm
+      state: present
+
   # UTILITIES
   - name: Install tree
     homebrew:
@@ -60,16 +94,6 @@
       update: yes
   - name: Install all vim plugins
     shell: vim +PluginInstall +qall
-
-  # ASTHETIC
-  #- name: Tap Hack Nerd Font
-  #  homebrew_tap:
-  #    name: caskroom/fonts
-  #    state: present
-  - name: install hack-nerd-font
-    homebrew_cask:
-      pkg: font-hack-nerd-font
-      state: present
 
   # WINDOW MANAGER
   - name: Tap chunkwm 
