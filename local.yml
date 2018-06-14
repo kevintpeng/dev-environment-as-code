@@ -36,16 +36,6 @@
       pkg: font-hack-nerd-font
       state: present
 
-  # PROGRAMMING
-  - name: Install pip
-    homebrew:
-      name: pip
-      state: present
-  - name: Install python
-    homebrew:
-      name: python
-      state: present
-
   # WINDOW MANAGER
   - name: Tap chunkwm 
     homebrew_tap:
