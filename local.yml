@@ -46,7 +46,7 @@
       name: chunkwm
       state: present
   - name: Install skhd
-    homebrew_cask:
+    homebrew:
       pkg: koekeishiya/formulae/skhd
       state: present
       options: HEAD,with-logging
