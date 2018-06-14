@@ -7,27 +7,27 @@
     file: 
       src: .vimrc
       dest: ~/.vimrc
-      state: hard
+      state: link
   - name: link .zshrc
     file: 
       src: .zshrc
       dest: ~/.zshrc
-      state: hard
+      state: link
   - name: link .tmux.conf
     file: 
       src: .tmux.conf
       dest: ~/.tmux.conf
-      state: hard
+      state: link
   - name: link .chunkwmrc
     file: 
       src: .chunkwmrc
       dest: ~/.chunkwrc
-      state: hard
+      state: link
   - name: link .skhdrc
     file: 
       src: .skhdrc
       dest: ~/.skhdrc
-      state: hard
+      state: link
 
   # UTILITIES
   - name: Install tree
