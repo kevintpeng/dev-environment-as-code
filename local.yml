@@ -48,6 +48,8 @@
       repo: https://github.com/chriskempson/base16-shell.git
       dest: ~/.config/base16-shell
       update: yes
+  - name: Set terminal colorscheme to default-dark
+    shell: base16-default-dark
 
   # WINDOW MANAGER
   - name: Tap chunkwm 
