@@ -94,23 +94,7 @@
       update: yes
   - name: Install all vim plugins
     shell: vim +PluginInstall +qall
-
-  # WINDOW MANAGER
-  - name: Tap chunkwm 
-    homebrew_tap:
-      name: crisidev/homebrew-chunkwm
+  - name: Install opr and ogh
+    gem:
+      name: open_git
       state: present
-  - name: Install chunkwm
-    homebrew:
-      name: chunkwm
-      state: present
-  - name: Install skhd
-    homebrew:
-      pkg: koekeishiya/formulae/skhd
-      state: present
-      options: HEAD,with-logging
-  - name: Install chunkwm
-    homebrew_cask:
-      pkg: chunkwm
-      state: present
-
