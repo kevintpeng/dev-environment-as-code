@@ -27,10 +27,10 @@
       state: present
 
   # ASTHETIC
-  - name: Tap Hack Nerd Font
-    homebrew_tap:
-      name: caskroom/fonts
-      state: present
+  #- name: Tap Hack Nerd Font
+  #  homebrew_tap:
+  #    name: caskroom/fonts
+  #    state: present
   - name: install hack-nerd-font
     homebrew_cask:
       pkg: font-hack-nerd-font
