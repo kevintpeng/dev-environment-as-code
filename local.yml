@@ -2,8 +2,66 @@
   become: true
   become_user: kevintpeng
   tasks:
+  # UTILITIES
+  - name: Install vim
+    homebrew:
+      name: vim
+      state: present
   - name: Install tree
     homebrew:
       name: tree
       state: present
- 
+  - name: Install fzf
+    homebrew:
+      name: fzf
+      state: present
+  - name: Configure fzf with useful key bindings and fuzzy completion
+    shell: $(brew --prefix)/opt/fzf/install
+  - name: Install tmux
+    homebrew:
+      name: tmux
+      state: present
+  - name: Install iTerm2
+    homebrew_cask:
+      pkg: iterm2
+      state: present
+
+  # ASTHETIC
+  - name: Tap Hack Nerd Font
+    homebrew_tap:
+      name: caskroom/fonts
+      state: upgraded
+  - name: install hack-nerd-font
+    homebrew_cask:
+      pkg: font-hack-nerd-font
+      state: present
+
+  # PROGRAMMING
+  - name: Install pip
+    homebrew:
+      name: pip
+      state: present
+  - name: Install python
+    homebrew:
+      name: python
+      state: present
+
+  # WINDOW MANAGER
+  - name: Tap chunkwm 
+    homebrew_tap:
+      name: crisidev/homebrew-chunkwm
+      state: upgraded
+  - name: Install chunkwm
+    homebrew_cask:
+      name: chunkwm
+      state: present
+  - name: Install skhd
+    homebrew_cask:
+      pkg: koekeishiya/formulae/skhd
+      state: present
+      options: HEAD,with-logging
+  - name: Install chunkwm
+    homebrew_cask:
+      pkg: chunkwm
+      state: present
+
