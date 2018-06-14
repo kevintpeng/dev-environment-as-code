@@ -63,10 +63,6 @@
       pkg: koekeishiya/formulae/skhd
       state: present
       options: HEAD,with-logging
-  - name: Install chunkwm
-    homebrew_cask:
-      pkg: chunkwm
-      state: present
 
   # UTILITIES
   - name: Install tree
