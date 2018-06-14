@@ -2,6 +2,33 @@
   become: true
   become_user: kevintpeng
   tasks:
+  # LINK DOTFILES
+  - name: link .vimrc
+    shell: ln .vimrc ~/.vimrc
+    ignore_errors: yes
+    register: command_result
+    changed_when: command_result.stderr == ""
+  - name: link .tmux.conf
+    shell: ln .tmux.conf ~/.tmux.conf
+    ignore_errors: yes
+    register: command_result
+    changed_when: command_result.stderr == ""
+  - name: link .chunkwmrc
+    shell: ln .chunkwmrc ~/.chunkwmrc
+    ignore_errors: yes
+    register: command_result
+    changed_when: command_result.stderr == ""
+  - name: link .skhdrc
+    shell: ln .skhdrc ~/.skhdrc
+    ignore_errors: yes
+    register: command_result
+    changed_when: command_result.stderr == ""
+  - name: link .zshrc
+    shell: ln .zshrc ~/.zshrc
+    ignore_errors: yes
+    register: command_result
+    changed_when: command_result.stderr == ""
+
   # UTILITIES
   - name: Install tree
     homebrew:
@@ -21,6 +48,13 @@
     homebrew_cask:
       pkg: iterm2
       state: present
+  - name: Install vundle
+    git:
+      repo: https://github.com/VundleVim/Vundle.vim.git
+      dest: ~/.vim/bundle/Vundle.vim
+      update: yes
+  - name: Install all vim plugins
+    shell: vim +PluginInstall +qall
 
   # ASTHETIC
   #- name: Tap Hack Nerd Font
