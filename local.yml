@@ -4,30 +4,30 @@
   tasks:
   # LINK DOTFILES
   - name: link .vimrc
-    shell: ln .vimrc ~/.vimrc
-    ignore_errors: yes
-    register: command_result
-    changed_when: command_result.stderr == ""
-  - name: link .tmux.conf
-    shell: ln .tmux.conf ~/.tmux.conf
-    ignore_errors: yes
-    register: command_result
-    changed_when: command_result.stderr == ""
-  - name: link .chunkwmrc
-    shell: ln .chunkwmrc ~/.chunkwmrc
-    ignore_errors: yes
-    register: command_result
-    changed_when: command_result.stderr == ""
-  - name: link .skhdrc
-    shell: ln .skhdrc ~/.skhdrc
-    ignore_errors: yes
-    register: command_result
-    changed_when: command_result.stderr == ""
+    file: 
+      src: .vimrc
+      dest: ~/.vimrc
+      state: hard
   - name: link .zshrc
-    shell: ln .zshrc ~/.zshrc
-    ignore_errors: yes
-    register: command_result
-    changed_when: command_result.stderr == ""
+    file: 
+      src: .zshrc
+      dest: ~/.zshrc
+      state: hard
+  - name: link .tmux.conf
+    file: 
+      src: .tmux.conf
+      dest: ~/.tmux.conf
+      state: hard
+  - name: link .chunkwmrc
+    file: 
+      src: .chunkwmrc
+      dest: ~/.chunkwrc
+      state: hard
+  - name: link .skhdrc
+    file: 
+      src: .skhdrc
+      dest: ~/.skhdrc
+      state: hard
 
   # UTILITIES
   - name: Install tree
