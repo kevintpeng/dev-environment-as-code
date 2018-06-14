@@ -3,29 +3,34 @@
   become_user: kevintpeng
   tasks:
   # LINK DOTFILES
+  - name: Clone dotfiles
+    git:
+      dest: ~/.dotfiles
+      repo: https://github.com/kevintpeng/dotfiles.git
+      update: yes
   - name: link .vimrc
     file: 
-      src: .vimrc
+      src: ~/.dotfiles/.vimrc
       dest: ~/.vimrc
       state: link
   - name: link .zshrc
     file: 
-      src: .zshrc
+      src: ~/.dotfiles/.zshrc
       dest: ~/.zshrc
       state: link
   - name: link .tmux.conf
     file: 
-      src: .tmux.conf
+      src: ~/.dotfiles/.tmux.conf
       dest: ~/.tmux.conf
       state: link
   - name: link .chunkwmrc
     file: 
-      src: .chunkwmrc
+      src: ~/.dotfiles/.chunkwmrc
       dest: ~/.chunkwrc
       state: link
   - name: link .skhdrc
     file: 
-      src: .skhdrc
+      src: ~/.dotfiles/.skhdrc
       dest: ~/.skhdrc
       state: link
 
