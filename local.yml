@@ -1,5 +1,5 @@
 - hosts: localhost
-  become: true
+  become: false
   tasks:
   - name: Install tree
     homebrew:
