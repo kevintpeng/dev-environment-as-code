@@ -67,6 +67,11 @@
       options: HEAD,with-logging
 
   # UTILITIES
+  - name: Install pure prompt
+    npm:
+      name: pure-prompt
+      global: yes
+      state: latest
   - name: Install tree
     homebrew:
       name: tree
