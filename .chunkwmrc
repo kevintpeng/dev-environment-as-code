@@ -52,10 +52,10 @@ chunkc set window_region_locked          1
 # chunkc set mouse_modifier                fn
 
 chunkc set preselect_border_color        0xffd75f5f
-chunkc set preselect_border_width        5
+chunkc set preselect_border_width        10
 chunkc set preselect_border_radius       0
 
-chunkc set focused_border_color          0xff0f6288
+chunkc set focused_border_color          0xFFBA8BAF
 chunkc set focused_border_width          5
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
