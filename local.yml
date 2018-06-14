@@ -12,27 +12,27 @@
     file: 
       src: ~/.dotfiles/.vimrc
       dest: ~/.vimrc
-      state: link
+      state: hard
   - name: link .zshrc
     file: 
       src: ~/.dotfiles/.zshrc
       dest: ~/.zshrc
-      state: link
+      state: hard
   - name: link .tmux.conf
     file: 
       src: ~/.dotfiles/.tmux.conf
       dest: ~/.tmux.conf
-      state: link
+      state: hard
   - name: link .chunkwmrc
     file: 
       src: ~/.dotfiles/.chunkwmrc
       dest: ~/.chunkwrc
-      state: link
+      state: hard
   - name: link .skhdrc
     file: 
       src: ~/.dotfiles/.skhdrc
       dest: ~/.skhdrc
-      state: link
+      state: hard
 
   # UTILITIES
   - name: Install tree
