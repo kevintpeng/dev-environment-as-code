@@ -1,5 +1,6 @@
 - hosts: localhost
-  become: false
+  become: true
+  become_user: kevintpeng
   tasks:
   - name: Install tree
     homebrew:
