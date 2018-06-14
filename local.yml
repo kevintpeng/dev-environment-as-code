@@ -2,7 +2,76 @@
   become: true
   become_user: kevintpeng
   tasks:
+  # LINK DOTFILES
+  - name: Clone dotfiles
+    git:
+      dest: ~/.dotfiles
+      repo: git@github.com:kevintpeng/dotfiles.git
+      update: yes
+  - name: link .vimrc
+    file: 
+      src: ~/.dotfiles/.vimrc
+      dest: ~/.vimrc
+      state: hard
+  - name: link .zshrc
+    file: 
+      src: ~/.dotfiles/.zshrc
+      dest: ~/.zshrc
+      state: hard
+  - name: link .tmux.conf
+    file: 
+      src: ~/.dotfiles/.tmux.conf
+      dest: ~/.tmux.conf
+      state: hard
+  - name: link .chunkwmrc
+    file: 
+      src: ~/.dotfiles/.chunkwmrc
+      dest: ~/.chunkwrc
+      state: hard
+  - name: link .skhdrc
+    file: 
+      src: ~/.dotfiles/.skhdrc
+      dest: ~/.skhdrc
+      state: hard
+
+  # ASTHETIC
+  #- name: Tap Hack Nerd Font
+  #  homebrew_tap:
+  #    name: caskroom/fonts
+  #    state: present
+  - name: install hack-nerd-font
+    homebrew_cask:
+      pkg: font-hack-nerd-font
+      state: present
+  - name: Install base16 colorscheme
+    git:
+      repo: https://github.com/chriskempson/base16-shell.git
+      dest: ~/.config/base16-shell
+      update: yes
+  - name: Set terminal colorscheme to default-dark
+    shell: ~/.config/base16-shell/scripts/base16-default-dark.sh default-dark
+
+  # WINDOW MANAGER
+  - name: Tap chunkwm 
+    homebrew_tap:
+      name: crisidev/homebrew-chunkwm
+      state: present
+  - name: Install chunkwm
+    homebrew:
+      name: chunkwm
+      state: present
+  - name: Install skhd
+    homebrew:
+      pkg: koekeishiya/formulae/skhd
+      state: present
+      options: HEAD,with-logging
+
   # UTILITIES
+  - name: Install pure prompt
+    npm:
+      name: pure-prompt
+      global: yes
+      state: latest
   - name: Install tree
     homebrew:
       name: tree
@@ -21,33 +90,14 @@
     homebrew_cask:
       pkg: iterm2
       state: present
-
-  # ASTHETIC
-  #- name: Tap Hack Nerd Font
-  #  homebrew_tap:
-  #    name: caskroom/fonts
-  #    state: present
-  - name: install hack-nerd-font
-    homebrew_cask:
-      pkg: font-hack-nerd-font
+  - name: Install vundle
+    git:
+      repo: https://github.com/VundleVim/Vundle.vim.git
+      dest: ~/.vim/bundle/Vundle.vim
+      update: yes
+  - name: Install all vim plugins
+    shell: vim +PluginInstall +qall
+  - name: Install opr and ogh
+    gem:
+      name: open_git
       state: present
-
-  # WINDOW MANAGER
-  - name: Tap chunkwm 
-    homebrew_tap:
-      name: crisidev/homebrew-chunkwm
-      state: present
-  - name: Install chunkwm
-    homebrew:
-      name: chunkwm
-      state: present
-  - name: Install skhd
-    homebrew:
-      pkg: koekeishiya/formulae/skhd
-      state: present
-      options: HEAD,with-logging
-  - name: Install chunkwm
-    homebrew_cask:
-      pkg: chunkwm
-      state: present
-

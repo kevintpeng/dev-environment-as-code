@@ -5,6 +5,6 @@
 ln .vimrc ~/.vimrc
 ln .tmux.conf ~/.tmux.conf
 ln .zshrc ~/.zshrc
-ln .chunkwm ~/.chunkwm
+ln .chunkwmrc ~/.chunkwmrc
 ln .skhdrc ~/.skhdrc
 
