@@ -30,7 +30,7 @@
   - name: Tap Hack Nerd Font
     homebrew_tap:
       name: caskroom/fonts
-      state: upgraded
+      state: present
   - name: install hack-nerd-font
     homebrew_cask:
       pkg: font-hack-nerd-font
@@ -50,7 +50,7 @@
   - name: Tap chunkwm 
     homebrew_tap:
       name: crisidev/homebrew-chunkwm
-      state: upgraded
+      state: present
   - name: Install chunkwm
     homebrew_cask:
       name: chunkwm
