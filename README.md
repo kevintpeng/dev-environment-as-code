@@ -8,9 +8,23 @@ The following instructions serve both as a guide if you want to try using my set
 3. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git`
 4. link dotfiles using hard links in dir `~`
 
+### Final manual configurations
+1. `base16_default-dark`
+
 ### Macbook Preferences
-
-
+1. `^ up` to pull up Mission Control, create 5 desktops
+2. `Keyboard > Shortcuts > Mission Control`
+  - setup desktop switching `^ x` to switch to desktop x
+  - uncheck application windows
+3. `Keyboard > Shortcuts > Launchpad & Dock`
+  - un check dock hiding
+4. `Keyboard > Shortcuts > Keyboard`, change "Move focus to menu bar" to `^Space`
+5. `System Preferences > General`
+  - check "use dark menu bar and Dock"
+  - check "automatically hide and show the menu bar"
+  - highlight color purple
+  - sidebar icons size: small
+  
 ### iTerm setup
 - Appearance
   - Tabs
