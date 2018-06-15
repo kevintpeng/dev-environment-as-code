@@ -73,7 +73,7 @@
     git:
       repo: https://github.com/koekeishiya/qes.git
       dest: /usr/local/etc/qes
-      state: present
+      update: yes
     when: qes.stat.exists == False
   - name: Build qes
     shell: make
