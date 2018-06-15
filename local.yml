@@ -139,31 +139,39 @@
     homebrew_cask:
       pkg: google-chrome
       state: present
+    ignore_errors: True
   - name: Install Anki
     homebrew_cask:
       pkg: anki
       state: present
+    ignore_errors: True
   - name: Install Steam
     homebrew_cask:
       pkg: steam
       state: present
+    ignore_errors: True
   - name: Install Discord
     homebrew_cask:
       pkg: discord
       state: present
+    ignore_errors: True
   - name: Install 1Password
     homebrew_cask:
       pkg: 1password
       state: present
+    ignore_errors: True
   - name: Install Karabiner-Elements
     homebrew_cask:
       pkg: karabiner-elements
       state: present
+    ignore_errors: True
   - name: Install flux
     homebrew_cask:
       pkg: flux
       state: present
+    ignore_errors: True
   - name: Install Deluge
     homebrew_cask:
       pkg: deluge
       state: present
+    ignore_errors: True
