@@ -33,6 +33,11 @@
       src: ~/.dotfiles/.skhdrc
       dest: ~/.skhdrc
       state: hard
+  - name: link .mackup.cfg
+    file: 
+      src: ~/.dotfiles/.mackup.cfg
+      dest: ~/.mackup.cfg
+      state: hard
 
   # ASTHETIC
   #- name: Tap Hack Nerd Font
@@ -156,11 +161,7 @@
     homebrew_cask:
       pkg: flux
       state: present
-  - name: Install iTerm2
+  - name: Install Deluge
     homebrew_cask:
-      pkg: iterm2
-      state: present
-  - name: Install iTerm2
-    homebrew_cask:
-      pkg: iterm2
+      pkg: deluge
       state: present
