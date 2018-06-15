@@ -66,3 +66,4 @@ alias json="python -m json.tool"
 #source $(dirname $(gem which colorls))/tab_complete.sh
 #alias ls=colorls
 #alias l="colorls -lA --sd"
+alias dev="sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git"
