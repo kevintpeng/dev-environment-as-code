@@ -68,7 +68,7 @@
   - name: Check existence
     stat:
       path: /usr/local/bin/qes
-      register: qes
+    register: qes
   - name: Pull qes
     git:
       repo: https://github.com/koekeishiya/qes.git
