@@ -26,6 +26,9 @@ The following instructions serve both as a guide if you want to try using my set
   - sidebar icons size: small
   
 ### iTerm setup
+- General
+  - Selection
+    - Applications in terminal may access clipboard
 - Appearance
   - Tabs
     - Theme = Dark
