@@ -101,3 +101,41 @@
     gem:
       name: open_git
       state: present
+
+  # APPS
+  - name: Install Google Chrome
+    homebrew_cask:
+      pkg: google-chrome
+      state: present
+  - name: Install Anki
+    homebrew_cask:
+      pkg: anki
+      state: present
+  - name: Install Steam
+    homebrew_cask:
+      pkg: steam
+      state: present
+  - name: Install Discord
+    homebrew_cask:
+      pkg: discord
+      state: present
+  - name: Install 1Password
+    homebrew_cask:
+      pkg: 1password
+      state: present
+  - name: Install Karabiner-Elements
+    homebrew_cask:
+      pkg: karabiner-elements
+      state: present
+  - name: Install flux
+    homebrew_cask:
+      pkg: flux
+      state: present
+  - name: Install iTerm2
+    homebrew_cask:
+      pkg: iterm2
+      state: present
+  - name: Install iTerm2
+    homebrew_cask:
+      pkg: iterm2
+      state: present
