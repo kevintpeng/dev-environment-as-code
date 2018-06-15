@@ -26,7 +26,7 @@
   - name: link .chunkwmrc
     file: 
       src: ~/.dotfiles/.chunkwmrc
-      dest: ~/.chunkwrc
+      dest: ~/.chunkwmrc
       state: hard
   - name: link .skhdrc
     file: 
