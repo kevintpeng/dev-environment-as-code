@@ -65,6 +65,27 @@
       pkg: koekeishiya/formulae/skhd
       state: present
       options: HEAD,with-logging
+  - name: Check existence
+    stat:
+      path: /usr/local/bin/qes
+      register: qes
+  - name: Pull qes
+    git:
+      repo: https://github.com/koekeishiya/qes.git
+      dest: /usr/local/etc/qes
+      state: present
+    when: qes.exists == False
+  - name: Build qes
+    shell: make
+    args:
+      chdir: /usr/local/etc/qes
+    when: qes.exists == False
+  - name: Add qes to path
+    file:
+      src: /usr/local/etc/qes/bin/qes
+      dest: /usr/local/bin/qes
+      state: hard
+    when: qes.exists == False
 
   # UTILITIES
   - name: Install pure prompt
