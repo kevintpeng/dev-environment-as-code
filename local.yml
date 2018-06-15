@@ -122,6 +122,10 @@
     gem:
       name: open_git
       state: present
+  - name: Install Mackup
+    homebrew:
+      pkg: mackup
+      state: present
 
   # APPS
   - name: Install Google Chrome
