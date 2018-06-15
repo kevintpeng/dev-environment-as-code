@@ -131,6 +131,8 @@
     homebrew:
       pkg: mackup
       state: present
+  - name: Mackup backup
+    shell: mackup backup
 
   # APPS
   - name: Install Google Chrome
