@@ -6,7 +6,7 @@
 
 - hosts: localhost
   become: true
-  become_user: {{ user }}
+  become_user: "{{ user }}"
   tasks:
   # LINK DOTFILES
   - name: Clone dotfiles
