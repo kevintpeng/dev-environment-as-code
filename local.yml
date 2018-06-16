@@ -143,7 +143,7 @@
       pkg: mackup
       state: present
   - name: Mackup Restore
-    shell: mackup restore
+    shell: /usr/bin/yes | mackup restore
 
   # APPS
   - name: Install Google Chrome
