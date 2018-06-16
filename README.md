@@ -5,7 +5,7 @@ The following instructions serve both as a guide if you want to try using my set
 
 1. install ansible
 2. modify hardcoded username if needed
-3. `sudo ansible-pull --extra-vars username=${whoami} -U https://github.com/kevintpeng/dotfiles.git`
+3. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git --extra-vars username=$(whoami)`
 4. link dotfiles using hard links in dir `~`
 
 ### Final manual configurations
