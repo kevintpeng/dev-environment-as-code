@@ -116,6 +116,7 @@
     homebrew_cask:
       pkg: iterm2
       state: present
+    ignore_errors: True
   - name: Install vundle
     git:
       repo: https://github.com/VundleVim/Vundle.vim.git
