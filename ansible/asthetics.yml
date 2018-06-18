@@ -1,0 +1,16 @@
+  # ASTHETICS
+  #- name: (Asthetics) Tap Hack Nerd Font
+  #  homebrew_tap:
+  #    name: caskroom/fonts
+  #    state: present
+  - name: (Asthetics) install hack-nerd-font
+    homebrew_cask:
+      pkg: font-hack-nerd-font
+      state: present
+  - name: (Asthetics) Install base16 colorscheme
+    git:
+      repo: https://github.com/chriskempson/base16-shell.git
+      dest: ~/.config/base16-shell
+      update: yes
+  #- name: (Asthetics) Set terminal colorscheme to default-dark
+  #  shell: base16_default-dark

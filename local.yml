@@ -2,172 +2,26 @@
   become: true
   become_user: "{{ username }}"
   tasks:
-  # LINK DOTFILES
-  - name: Clone dotfiles
-    git:
-      dest: ~/.dotfiles
-      repo: git@github.com:kevintpeng/dev-environment-as-code.git
-      update: yes
-  - name: link .vimrc
-    file:
-      src: ~/.dotfiles/.vimrc
-      dest: ~/.vimrc
-      state: link
-      force: yes
-  - name: link .zshrc
-    file:
-      src: ~/.dotfiles/.zshrc
-      dest: ~/.zshrc
-      state: link
-      force: yes
-  - name: link .tmux.conf
-    file:
-      src: ~/.dotfiles/.tmux.conf
-      dest: ~/.tmux.conf
-      state: link
-      force: yes
-  - name: link .chunkwmrc
-    file:
-      src: ~/.dotfiles/.chunkwmrc
-      dest: ~/.chunkwmrc
-      state: link
-      force: yes
-  - name: link .skhdrc
-    file:
-      src: ~/.dotfiles/.skhdrc
-      dest: ~/.skhdrc
-      state: link
-      force: yes
-  - name: link .mackup.cfg
-    file:
-      src: ~/.dotfiles/.mackup.cfg
-      dest: ~/.mackup.cfg
-      state: link
-      force: yes
-  - name: create dir .mackup
-    file:
-      path: ~/.mackup
-      state: directory
-      recurse: no
-  - name: link .mackup/custom.cfg
-    file:
-      src: ~/.dotfiles/.mackup/custom.cfg
-      dest: ~/.mackup/custom.cfg
-      state: link
-      force: yes
-  - name: "link iCloud to ~"
-    file:
-      src: ~/Library/Mobile Documents/com~apple~CloudDocs/
-      dest: ~/iCloud
-      state: link
+  - name: Install Dotfiles
+    include: ./ansible/dotfiles.yml
+    tags:
+      - dotfiles
 
-  # ASTHETIC
-  #- name: Tap Hack Nerd Font
-  #  homebrew_tap:
-  #    name: caskroom/fonts
-  #    state: present
-  - name: install hack-nerd-font
-    homebrew_cask:
-      pkg: font-hack-nerd-font
-      state: present
-  - name: Install base16 colorscheme
-    git:
-      repo: https://github.com/chriskempson/base16-shell.git
-      dest: ~/.config/base16-shell
-      update: yes
-  #- name: Set terminal colorscheme to default-dark
-  #  shell: base16_default-dark
+  - name: Install Asthetics
+    include: ./ansible/asthetics.yml
+    tags:
+      - asthetics
 
-  # WINDOW MANAGER
-  - name: Tap chunkwm
-    homebrew_tap:
-      name: crisidev/homebrew-chunkwm
-      state: present
-  - name: Install chunkwm
-    homebrew:
-      name: chunkwm
-      state: present
-  - name: Install skhd
-    homebrew:
-      pkg: koekeishiya/formulae/skhd
-      state: present
-      options: HEAD,with-logging
-  - name: Check existence
-    stat:
-      path: /usr/local/bin/qes
-    register: qes
-  - name: Pull qes
-    git:
-      repo: https://github.com/koekeishiya/qes.git
-      dest: /usr/local/etc/qes
-      update: yes
-    when: qes.stat.exists == False
-  - name: Build qes
-    shell: make
-    args:
-      chdir: /usr/local/etc/qes
-    when: qes.stat.exists == False
-  - name: Add qes to path
-    file:
-      src: /usr/local/etc/qes/bin/qes
-      dest: /usr/local/bin/qes
-      state: hard
-    when: qes.stat.exists == False
+  - name: Install Window Manager
+    include: ./ansible/window_manager.yml
+    tags:
+      - window_manager
 
-  # UTILITIES
-  - name: Install pure prompt
-    npm:
-      name: pure-prompt
-      global: yes
-      state: latest
-  - name: Install zsh-syntax-highlighting
-    git:
-      repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-      dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-      update: yes
-  - name: Install zsh-autosuggest
-    git:
-      repo: https://github.com/zsh-users/zsh-autosuggestions.git
-      dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-      update: yes
-  - name: Install tree
-    homebrew:
-      name: tree
-      state: present
-  - name: Install fzf
-    homebrew:
-      name: fzf
-      state: present
-  - name: Configure fzf with useful key bindings and fuzzy completion
-    shell: $(brew --prefix)/opt/fzf/install
-  - name: Install tmux
-    homebrew:
-      name: tmux
-      state: present
-  - name: Install iTerm2
-    homebrew_cask:
-      pkg: iterm2
-      state: present
-    ignore_errors: True
-  - name: Install vundle
-    git:
-      repo: https://github.com/VundleVim/Vundle.vim.git
-      dest: ~/.vim/bundle/Vundle.vim
-      update: yes
-  - name: Install all vim plugins
-    shell: vim +PluginInstall +qall
-  - name: Install opr and ogh
-    gem:
-      name: open_git
-      state: present
-  - name: Install Mackup
-    homebrew:
-      pkg: mackup
-      state: present
-  - name: Mackup Restore
-    shell: "/usr/bin/yes | mackup restore"
+  - name: Install Utilities
+    include: ./ansible/utilities.yml
+    tags:
+      - utilities
 
-  # APPS
   - name: Install Apps
     homebrew_cask:
       pkg: "{{ item }}"
@@ -183,3 +37,8 @@
       - karabiner-elements
       - flux
       - deluge
+
+  - name: Mackup Restore
+    include: ./ansible/mackup.yml
+    tags:
+      - mackup

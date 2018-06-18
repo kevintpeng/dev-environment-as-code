@@ -1,0 +1,35 @@
+  # WINDOW MANAGER
+  - name: (Window Manager) Tap chunkwm
+    homebrew_tap:
+      name: crisidev/homebrew-chunkwm
+      state: present
+  - name: (Window Manager) Install chunkwm
+    homebrew:
+      name: chunkwm
+      state: present
+  - name: (Window Manager) Install skhd
+    homebrew:
+      pkg: koekeishiya/formulae/skhd
+      state: present
+      options: HEAD,with-logging
+  - name: (Window Manager) Check existence
+    stat:
+      path: /usr/local/bin/qes
+    register: qes
+  - name: (Window Manager) Pull qes
+    git:
+      repo: https://github.com/koekeishiya/qes.git
+      dest: /usr/local/etc/qes
+      update: yes
+    when: qes.stat.exists == False
+  - name: (Window Manager) Build qes
+    shell: make
+    args:
+      chdir: /usr/local/etc/qes
+    when: qes.stat.exists == False
+  - name: (Window Manager) Add qes to path
+    file:
+      src: /usr/local/etc/qes/bin/qes
+      dest: /usr/local/bin/qes
+      state: hard
+    when: qes.stat.exists == False

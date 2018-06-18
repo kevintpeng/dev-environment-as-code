@@ -1,0 +1,58 @@
+  # LINK DOTFILES
+  - name: (Dotfiles) Clone dotfiles
+    git:
+      dest: ~/.dotfiles
+      repo: git@github.com:kevintpeng/dev-environment-as-code.git
+      update: yes
+  - name: (Dotfiles) link .vimrc
+    file:
+      src: ~/.dotfiles/.vimrc
+      dest: ~/.vimrc
+      state: link
+      force: yes
+  - name: (Dotfiles) link .zshrc
+    file:
+      src: ~/.dotfiles/.zshrc
+      dest: ~/.zshrc
+      state: link
+      force: yes
+  - name: (Dotfiles) link .tmux.conf
+    file:
+      src: ~/.dotfiles/.tmux.conf
+      dest: ~/.tmux.conf
+      state: link
+      force: yes
+  - name: (Dotfiles) link .chunkwmrc
+    file:
+      src: ~/.dotfiles/.chunkwmrc
+      dest: ~/.chunkwmrc
+      state: link
+      force: yes
+  - name: (Dotfiles) link .skhdrc
+    file:
+      src: ~/.dotfiles/.skhdrc
+      dest: ~/.skhdrc
+      state: link
+      force: yes
+  - name: (Dotfiles) link .mackup.cfg
+    file:
+      src: ~/.dotfiles/.mackup.cfg
+      dest: ~/.mackup.cfg
+      state: link
+      force: yes
+  - name: (Dotfiles) create dir .mackup
+    file:
+      path: ~/.mackup
+      state: directory
+      recurse: no
+  - name: (Dotfiles) link .mackup/custom.cfg
+    file:
+      src: ~/.dotfiles/.mackup/custom.cfg
+      dest: ~/.mackup/custom.cfg
+      state: link
+      force: yes
+  - name: (Dotfiles) "link iCloud to ~"
+    file:
+      src: ~/Library/Mobile Documents/com~apple~CloudDocs/
+      dest: ~/iCloud
+      state: link

@@ -1,0 +1,7 @@
+# MACKUP RESTORE
+- name: (Mackup) Install
+  homebrew:
+    pkg: mackup
+    state: present
+- name: (Mackup) Restore
+  shell: "/usr/bin/yes | mackup restore"
