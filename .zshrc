@@ -70,3 +70,9 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 
 # modify history settings
 setopt hist_ignore_dups share_history inc_append_history extended_history
+
+# Load any unsynchronized local zshrc configurations and settings
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
+
