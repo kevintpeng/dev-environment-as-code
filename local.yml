@@ -1,6 +1,6 @@
 - hosts: localhost
   become: true
-  become_user: "{{ username }}" 
+  become_user: "{{ username }}"
   tasks:
   # LINK DOTFILES
   - name: Clone dotfiles
@@ -9,48 +9,48 @@
       repo: git@github.com:kevintpeng/dev-environment-as-code.git
       update: yes
   - name: link .vimrc
-    file: 
+    file:
       src: ~/.dotfiles/.vimrc
       dest: ~/.vimrc
       state: link
       force: yes
   - name: link .zshrc
-    file: 
+    file:
       src: ~/.dotfiles/.zshrc
       dest: ~/.zshrc
       state: link
       force: yes
   - name: link .tmux.conf
-    file: 
+    file:
       src: ~/.dotfiles/.tmux.conf
       dest: ~/.tmux.conf
       state: link
       force: yes
   - name: link .chunkwmrc
-    file: 
+    file:
       src: ~/.dotfiles/.chunkwmrc
       dest: ~/.chunkwmrc
       state: link
       force: yes
   - name: link .skhdrc
-    file: 
+    file:
       src: ~/.dotfiles/.skhdrc
       dest: ~/.skhdrc
       state: link
       force: yes
   - name: link .mackup.cfg
-    file: 
+    file:
       src: ~/.dotfiles/.mackup.cfg
       dest: ~/.mackup.cfg
       state: link
       force: yes
   - name: create dir .mackup
-    file: 
+    file:
       path: ~/.mackup
       state: directory
       recurse: no
   - name: link .mackup/custom.cfg
-    file: 
+    file:
       src: ~/.dotfiles/.mackup/custom.cfg
       dest: ~/.mackup/custom.cfg
       state: link
@@ -79,7 +79,7 @@
   #  shell: base16_default-dark
 
   # WINDOW MANAGER
-  - name: Tap chunkwm 
+  - name: Tap chunkwm
     homebrew_tap:
       name: crisidev/homebrew-chunkwm
       state: present
@@ -168,43 +168,18 @@
     shell: "/usr/bin/yes | mackup restore"
 
   # APPS
-  - name: Install Google Chrome
+  - name: Install Apps
     homebrew_cask:
-      pkg: google-chrome
+      pkg: "{{ item }}"
       state: present
     ignore_errors: True
-  - name: Install Anki
-    homebrew_cask:
-      pkg: anki
-      state: present
-    ignore_errors: True
-  - name: Install Steam
-    homebrew_cask:
-      pkg: steam
-      state: present
-    ignore_errors: True
-  - name: Install Discord
-    homebrew_cask:
-      pkg: discord
-      state: present
-    ignore_errors: True
-  - name: Install 1Password
-    homebrew_cask:
-      pkg: 1password
-      state: present
-    ignore_errors: True
-  - name: Install Karabiner-Elements
-    homebrew_cask:
-      pkg: karabiner-elements
-      state: present
-    ignore_errors: True
-  - name: Install flux
-    homebrew_cask:
-      pkg: flux
-      state: present
-    ignore_errors: True
-  - name: Install Deluge
-    homebrew_cask:
-      pkg: deluge
-      state: present
-    ignore_errors: True
+    with_items:
+      - google-chrome
+      - atom
+      - anki
+      - steam
+      - discord
+      - 1password
+      - karabiner-elements
+      - flux
+      - deluge
