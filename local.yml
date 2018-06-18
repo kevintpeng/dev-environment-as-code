@@ -51,7 +51,7 @@
       recurse: no
   - name: link .mackup/custom.cfg
     file: 
-      src: ~/.dotfiles/.mackup/.custom.cfg
+      src: ~/.dotfiles/.mackup/custom.cfg
       dest: ~/.mackup/custom.cfg
       state: link
       force: yes
