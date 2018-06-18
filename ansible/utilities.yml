@@ -14,14 +14,14 @@
       repo: https://github.com/zsh-users/zsh-autosuggestions.git
       dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
       update: yes
-  - name: (Utilities) Install tree
+  - name: (Utilities) Install utilities from brew
     homebrew:
-      name: tree
+      name: "{{ item }}"
       state: present
-  - name: (Utilities) Install fzf
-    homebrew:
-      name: fzf
-      state: present
+    with_items:
+      - tree
+      - fzf
+      - gist
   - name: (Utilities) Configure fzf with useful key bindings and fuzzy completion
     shell: $(brew --prefix)/opt/fzf/install
   - name: (Utilities) Install tmux
