@@ -38,6 +38,11 @@
       src: ~/.dotfiles/.mackup.cfg
       dest: ~/.mackup.cfg
       state: link
+  - name: link .mackup/custom.cfg
+    file: 
+      src: ~/.dotfiles/.mackup/.custom.cfg
+      dest: ~/.mackup/custom.cfg
+      state: link
   - name: "link iCloud to ~"
     file:
       src: ~/Library/Mobile Documents/com~apple~CloudDocs/
