@@ -6,7 +6,7 @@
   - name: Clone dotfiles
     git:
       dest: ~/.dotfiles
-      repo: git@github.com:kevintpeng/dotfiles.git
+      repo: git@github.com:kevintpeng/dev-environment-as-code.git
       update: yes
   - name: link .vimrc
     file: 
