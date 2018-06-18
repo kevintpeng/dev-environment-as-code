@@ -44,6 +44,11 @@
       dest: ~/.mackup.cfg
       state: link
       force: yes
+  - name: create dir .mackup
+    file: 
+      path: ~/.mackup
+      state: directory
+      recurse: no
   - name: link .mackup/custom.cfg
     file: 
       src: ~/.dotfiles/.mackup/.custom.cfg
