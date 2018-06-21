@@ -22,6 +22,7 @@
       - tree
       - fzf
       - gist
+      - task
   - name: (Utilities) Configure fzf with useful key bindings and fuzzy completion
     shell: $(brew --prefix)/opt/fzf/install
   - name: (Utilities) Install tmux
