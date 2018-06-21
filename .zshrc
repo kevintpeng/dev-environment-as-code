@@ -63,6 +63,7 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 # pretty print json strings
 alias json="python -m json.tool"
 
+<<<<<<< HEAD
 # taskwarrior aliases
 alias in='task add +in'
 
@@ -92,6 +93,10 @@ read_and_review (){
 }
 
 alias rnr=read_and_review
+=======
+alias t=task
+alias tw="task +@work add"
+>>>>>>> 3d7ac0f0e25b1f714a9ce366b8ce091d7f7e8758
 
 # modify history settings
 setopt hist_ignore_dups share_history inc_append_history extended_history
@@ -104,3 +109,5 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+# set shell color
+base16_default-dark
