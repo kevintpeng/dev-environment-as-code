@@ -76,3 +76,5 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+# set shell color
+base16_default-dark
