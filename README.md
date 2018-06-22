@@ -6,6 +6,7 @@ The following instructions serve both as a guide if you want to try using my set
 1. install ansible
 2. install pip, npm, bundler, and associated languages
 2. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git --extra-vars username=$(whoami)`
+- *note: `devup` is aliased to the above command, can be used to update after being installed*
 
 ### Final manual configurations
 1. `base16_default-dark`
