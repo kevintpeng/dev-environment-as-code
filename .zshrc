@@ -101,12 +101,12 @@ webpage_title (){
     curl "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
 }
 
-read_and_review (){
+taskwarrior_add_to_reading_backlog (){
     link="$1"
     title=$(webpage_title $link)
     echo $title
     descr="\"Read and review: $title\""
-    id=$(task add +next +rnr "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
+    id=$(task add +read +article "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
 }
 
-alias rnr=read_and_review
+alias rbl=taskwarrior_add_to_reading_backlog
