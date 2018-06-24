@@ -17,7 +17,6 @@
       - .chunkwmrc
       - .skhdrc
       - .mackup.cfg
-      - .taskrc
   - name: (Dotfiles) create dir .mackup
     file:
       path: ~/.mackup
