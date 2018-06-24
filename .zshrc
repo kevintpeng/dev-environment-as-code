@@ -79,3 +79,34 @@ fi
 
 # set shell color
 base16_default-dark
+
+read_next(){
+  if [ $# -eq 0 ]; then
+    task_id=$(t read rc.verbose=nothing limit:1 rc.reports.read.columns:id)
+  else
+    task_id=$1
+  fi 
+  task_url=$(t _get ${task_id}.url)
+  if [ -z "$task_url" ]; then
+    echo "Error: Task #${task_id} does not have a url"
+  else
+    open $task_url -a Google\ Chrome
+    task $task_id start
+  fi 
+}
+
+alias trd=read_next
+
+webpage_title (){
+    curl "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
+}
+
+read_and_review (){
+    link="$1"
+    title=$(webpage_title $link)
+    echo $title
+    descr="\"Read and review: $title\""
+    id=$(task add +next +rnr "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
+}
+
+alias rnr=read_and_review
