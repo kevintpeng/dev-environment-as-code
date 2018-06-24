@@ -98,7 +98,7 @@ read_next(){
 alias trd=read_next
 
 webpage_title (){
-    curl "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
+    curl "$*" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'
 }
 
 taskwarrior_add_to_reading_backlog (){
