@@ -105,8 +105,16 @@ taskwarrior_add_to_reading_backlog (){
     link="$1"
     title=$(webpage_title $link)
     echo $title
-    descr="\"Read and review: $title\""
+    descr="\"Read: $title\""
     id=$(task add +read +article "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
+}
+
+taskwarrior_add_to_read_and_review (){
+    link="$1"
+    title=$(webpage_title $link)
+    echo $title
+    descr="\"Read and review: $title\""
+    id=$(task add +rnr +read +next "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
 }
 
 alias rbl=taskwarrior_add_to_reading_backlog
