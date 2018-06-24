@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
   git
-  zsh-autosuggestions 
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
@@ -63,62 +63,6 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 # pretty print json strings
 alias json="python -m json.tool"
 
-# taskwarrior aliases
-alias in='task add +in'
-
-# taskwarrior show number of pending inbox items in GTD
-export PS1='$(task +in +PENDING count) '$PS1
-
-# taskwarrior wait cmd alias
-tickle () {
-    deadline=$1
-    shift
-    in +tickle wait:$deadline $@
-}
-alias tick=tickle
-
-alias t=task
-alias tw="task +@work add"
-
-read_next(){
-  if [ $# -eq 0 ]; then
-    task_id=$(t read rc.verbose=nothing limit:1 rc.reports.read.columns:id)
-  else
-    task_id=$1
-  fi 
-  task_url=$(t _get ${task_id}.url)
-  if [ -z "$task_url" ]; then
-    echo "Error: Task #${task_id} does not have a url"
-  else
-    open $task_url -a Google\ Chrome
-    task $task_id start
-  fi 
-}
-
-alias trd=read_next
-
-webpage_title (){
-    curl "$*" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'
-}
-
-taskwarrior_add_to_reading_backlog (){
-    link="$1"
-    title=$(webpage_title $link)
-    echo $title
-    descr="\"Read: $title\""
-    id=$(task add +read +article "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
-}
-
-taskwarrior_add_to_read_and_review (){
-    link="$1"
-    title=$(webpage_title $link)
-    echo $title
-    descr="\"Read and review: $title\""
-    id=$(task add +rnr +read +next "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
-}
-
-alias rbl=taskwarrior_add_to_reading_backlog
-
 # modify history settings
 setopt hist_ignore_dups share_history inc_append_history extended_history
 
@@ -130,6 +74,10 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+# Load taskwarrior aliases and functions
+if [ -f ~/.zshrc-taskwarrior ]; then
+  source ~/.zshrc-taskwarrior
+fi
+
 # set shell color
 base16_default-dark
-
