@@ -63,7 +63,6 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 # pretty print json strings
 alias json="python -m json.tool"
 
-<<<<<<< HEAD
 # taskwarrior aliases
 alias in='task add +in'
 
@@ -78,39 +77,8 @@ tickle () {
 }
 alias tick=tickle
 
-# taskwarrior read and review
-webpage_title (){
-    curl "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
-}
-
-read_and_review (){
-    link="$1"
-    title=$(webpage_title $link)
-    echo $title
-    descr="\"Read and review: $title\""
-    id=$(task add +next +rnr "$descr" | sed -n 's/Created task \(.*\)./\1/p')
-    task "$id" annotate "$link"
-}
-
-alias rnr=read_and_review
-=======
 alias t=task
 alias tw="task +@work add"
->>>>>>> 3d7ac0f0e25b1f714a9ce366b8ce091d7f7e8758
-
-# modify history settings
-setopt hist_ignore_dups share_history inc_append_history extended_history
-
-#disable auto correct
-unsetopt correct_all
-
-# Load any unsynchronized local zshrc configurations and settings
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
-# set shell color
-base16_default-dark
 
 read_next(){
   if [ $# -eq 0 ]; then
@@ -142,3 +110,18 @@ taskwarrior_add_to_reading_backlog (){
 }
 
 alias rbl=taskwarrior_add_to_reading_backlog
+
+# modify history settings
+setopt hist_ignore_dups share_history inc_append_history extended_history
+
+#disable auto correct
+unsetopt correct_all
+
+# Load any unsynchronized local zshrc configurations and settings
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
+
+# set shell color
+base16_default-dark
+
