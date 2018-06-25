@@ -12,7 +12,15 @@ tickle () {
 }
 alias tick=tickle
 
-alias t=task
+taskwarrior_next() {
+  if [ $# -eq 0 ]; then
+    task limit:8
+  else
+    task $@
+  fi
+}
+
+alias t=taskwarrior_next
 alias tw="task +@work add"
 
 read_next(){
