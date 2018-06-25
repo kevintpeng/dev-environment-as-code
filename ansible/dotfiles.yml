@@ -13,11 +13,11 @@
     with_items:
       - .vimrc
       - .zshrc
+      - .zshrc-taskwarrior
       - .tmux.conf
       - .chunkwmrc
       - .skhdrc
       - .mackup.cfg
-      - .taskrc
   - name: (Dotfiles) create dir .mackup
     file:
       path: ~/.mackup
