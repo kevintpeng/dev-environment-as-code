@@ -63,6 +63,8 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 # pretty print json strings
 alias json="python -m json.tool"
 
+alias atom="atom -a"
+
 # modify history settings
 setopt hist_ignore_dups share_history inc_append_history extended_history
 
