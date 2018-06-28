@@ -4,8 +4,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 # fix colors in tmux
-export TERM="xterm-256color"
-if [ "$TMUX" = "" ]; then tmux -2; fi
+# export TERM="xterm-256color"
+# if [ "$TMUX" = "" ]; then tmux -2; fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -64,6 +64,8 @@ alias devup="sudo ansible-pull -U https://github.com/kevintpeng/dev-environment-
 alias json="python -m json.tool"
 
 alias atom="atom -a"
+
+alias learn="atom ~/Code/Learn-Something-Every-Day"
 
 # modify history settings
 setopt hist_ignore_dups share_history inc_append_history extended_history
