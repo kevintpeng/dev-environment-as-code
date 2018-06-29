@@ -7,21 +7,6 @@
     tags:
       - dotfiles
 
-  - name: Install Asthetics
-    include: ./ansible/asthetics.yml
-    tags:
-      - asthetics
-
-  - name: Install Window Manager
-    include: ./ansible/window_manager.yml
-    tags:
-      - window_manager
-
-  - name: Install Utilities
-    include: ./ansible/utilities.yml
-    tags:
-      - utilities
-
   - name: Install Apps
     homebrew_cask:
       pkg: "{{ item }}"
@@ -37,6 +22,21 @@
       - karabiner-elements
       - flux
       - deluge
+
+  - name: Install Asthetics
+    include: ./ansible/asthetics.yml
+    tags:
+      - asthetics
+
+  - name: Install Window Manager
+    include: ./ansible/window_manager.yml
+    tags:
+      - window_manager
+
+  - name: Install Utilities
+    include: ./ansible/utilities.yml
+    tags:
+      - utilities
 
   - name: Mackup Restore
     include: ./ansible/mackup.yml
