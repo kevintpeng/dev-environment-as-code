@@ -23,6 +23,7 @@
       - flux
       - deluge
       - firefox
+      - bettertouchtool
 
   - name: Install Asthetics
     include: ./ansible/asthetics.yml
