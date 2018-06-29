@@ -14,3 +14,14 @@
       update: yes
   #- name: (Asthetics) Set terminal colorscheme to default-dark
   #  shell: base16_default-dark
+  - name: (Asthetics) Check existence of link
+    stat:
+      path: ~/Library/Application\ Support/Firefox/Profiles/default
+    register: default_profile
+  - name: (Asthetics) Link default profile
+    shell: default_profile=$(ls -1 | grep .default) && ln -s ${default_profile} default
+    when: default_profile.stat.exists == False
+  - name: (Asthetics) Mkdir `chrome` for firefox config
+    file:
+      path: ~/Library/Application\ Support/Firefox/Profiles/default/chrome
+      state: directory
