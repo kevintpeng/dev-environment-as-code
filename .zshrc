@@ -52,7 +52,13 @@ prompt pure
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # configure fasd
-#eval "$(fasd --init auto)"
+fasd_cache="$HOME/.fasd-init-zsh"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
+
 
 # tab completion for colorls
 #source $(dirname $(gem which colorls))/tab_complete.sh
