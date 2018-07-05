@@ -1,5 +1,6 @@
 # taskwarrior aliases
 alias in='task add +in'
+alias out='task +in status:pending edit'
 
 # taskwarrior show number of pending inbox items in GTD
 export PS1='$(task +in +PENDING count) '$PS1
@@ -61,3 +62,5 @@ taskwarrior_add_to_read_and_review (){
 }
 
 alias rbl=taskwarrior_add_to_reading_backlog
+alias trbl=rbl
+alias trb=rbl
