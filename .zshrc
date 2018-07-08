@@ -28,6 +28,9 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
+  osx
+  taskwarrior
+  sudo
   git
   fasd
   zsh-syntax-highlighting
@@ -35,6 +38,19 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
