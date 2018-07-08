@@ -25,6 +25,11 @@
       - firefox
       - bettertouchtool
 
+  - name: Setup Shell
+    include: ./ansible/shell.yml
+    tags:
+      - shell
+      
   - name: Install Asthetics
     include: ./ansible/asthetics.yml
     tags:
