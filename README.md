@@ -6,7 +6,7 @@ This repo contains both my dotfiles and also ansible scripts to install my setup
 ### Installation
 
 1. install homebrew
-2. install ansible
+2. install ansible: `brew install ansible`
 3. install pip, npm, bundler, and associated languages
 4. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git --extra-vars username=$(whoami)`
 - *note: `devup` is aliased to the above command, can be used to update after being installed*
