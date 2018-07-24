@@ -91,3 +91,9 @@ fi
 
 # set shell color
 base16_default-dark
+
+better_gist() {
+  gist $1 | pbcopy && echo "$1 copied!"
+}
+
+alias gist=better_gist
