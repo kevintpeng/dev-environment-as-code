@@ -24,7 +24,7 @@ taskwarrior_next() {
 alias t=taskwarrior_next
 alias tw="task +@work add"
 
-read_next(){
+taskwarrior_read_next(){
   if [ $# -eq 0 ]; then
     task_id=$(t read rc.verbose=nothing limit:1 rc.reports.read.columns:id)
   else
@@ -39,18 +39,19 @@ read_next(){
   task $task_id start
 }
 
-alias trd=read_next
+alias trd=taskwarrior_read_next
 
-webpage_title (){
+taskwarrior_webpage_title (){
     curl "$*" | perl -l -0777 -ne 'print $1 if /<title.*?>\s*(.*?)\s*<\/title/si'
 }
 
 taskwarrior_add_to_reading_backlog (){
     link="$1"
-    title=$(webpage_title $link)
+    title=$(taskwarrior_webpage_title $link)
     echo $title
     descr="\"Read: $title\""
-    id=$(task add +read +article "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
+    shift
+    id=$(task add +read +article "$descr" url:$link $@ | sed -n 's/Created task \(.*\)./\1/p')
 }
 
 taskwarrior_add_to_read_and_review (){
@@ -58,7 +59,8 @@ taskwarrior_add_to_read_and_review (){
     title=$(webpage_title $link)
     echo $title
     descr="\"Read and review: $title\""
-    id=$(task add +rnr +read +next "$descr" url:$link | sed -n 's/Created task \(.*\)./\1/p')
+    shift
+    id=$(task add +rnr +read +next "$descr" url:$link $@ | sed -n 's/Created task \(.*\)./\1/p')
 }
 
 alias rbl=taskwarrior_add_to_reading_backlog
