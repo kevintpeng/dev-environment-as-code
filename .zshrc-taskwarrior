@@ -22,6 +22,8 @@ taskwarrior_next() {
 }
 
 alias t=taskwarrior_next
+# for tab completion
+#compdef ${ZSH}/plugins/taskwarrior/_task t=task
 alias tw="task +@work add"
 
 taskwarrior_read_next(){
@@ -32,9 +34,9 @@ taskwarrior_read_next(){
   fi
   task_url=$(t _get ${task_id}.url)
   if [ -z "$task_url" ]; then
-    open "https://www.google.com/search?q=$(t _get ${task_id}.description)" -a Google\ Chrome
+    open "https://www.google.com/search?q=$(t _get ${task_id}.description)" -a Safari
   else
-    open $task_url -a Google\ Chrome
+    open $task_url -a Safari
   fi
   task $task_id start
 }
