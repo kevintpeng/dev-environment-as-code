@@ -1,4 +1,9 @@
   # UTILITIES
+  - name: (Utilities) Make shortcut to iCloud
+    file:
+      src: ~/Library/Mobile Documents/com~apple~CloudDocs/
+      dest: ~/iCloud
+      state: link
   - name: (Utilities) Install pure prompt
     npm:
       name: pure-prompt
