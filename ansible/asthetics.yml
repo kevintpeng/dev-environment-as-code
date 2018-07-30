@@ -21,3 +21,12 @@
   - name: (Asthetics) Link default profile
     shell: default_profile=$(ls -1 ~/Library/Application\ Support/Firefox/Profiles/ | grep .default) && ln -s ${default_profile} ~/Library/Application\ Support/Firefox/Profiles/default
     when: default_profile.stat.exists == False
+  - name: (Asthetics) Ensure chrome directory exists
+    file:
+      path: ~/Library/Application\ Support/Firefox/Profiles/default/chrome
+      state: directory
+  - name: (Asthetics) Link userChrome.css
+    file:
+      dest: ~/Library/Application\ Support/Firefox/Profiles/default/chrome/userChrome.css
+      src: ~/.dotfiles/firefox/userChrome.css
+      state: link

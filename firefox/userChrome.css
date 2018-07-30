@@ -1,0 +1,47 @@
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+/*
+ * Hide tab bar, navigation bar and scrollbars
+ * !important may be added to force override, but not necessary
+ */
+#titlebar {display: none !important;}
+#TabsToolbar {visibility: collapse;}
+#navigator-toolbox {visibility: collapse;}
+
+/* #content browser { */
+/*   margin-right:-17px!important; */
+/*   overflow-y:scroll; */
+/*   overflow-x:hidden; */
+/* } */
+
+#sidebar-header {
+  display: none;
+}
+
+/*Collapse in default state and add transition*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  overflow: hidden;
+  min-width: 23px;
+  max-width: 23px;
+  transition: all 0.1s ease;
+  border-right: 1px solid #0c0c0d;
+  z-index: 2;
+}
+
+/*Expand to 260px on hover*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+  min-width: 260px !important;
+  max-width: 260px !important;
+}
+
+.tab:not(:hover) .closebox {
+  display: none;
+}
+
+.newtab-button {
+  display: none;
+}
