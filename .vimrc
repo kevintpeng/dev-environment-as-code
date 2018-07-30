@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-sensible'
 
 call vundle#end()   " required
 """""""""""""""Vundle setup end"""""""""""""""""""""""
