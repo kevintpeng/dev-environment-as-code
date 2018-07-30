@@ -25,6 +25,7 @@ chunkc set window_fade_duration          0.1
 chunkc set global_desktop_mode           bsp
 
 chunkc set 7_desktop_mode                float
+chunkc set 8_desktop_mode                float
 chunkc set focused_border_skip_floating  1
 
 chunkc set global_desktop_offset_top     2
@@ -56,7 +57,7 @@ chunkc set preselect_border_width        10
 chunkc set preselect_border_radius       0
 
 chunkc set focused_border_color          0xFFBA8BAF
-chunkc set focused_border_width          8
+chunkc set focused_border_width          3
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
 
