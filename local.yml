@@ -32,7 +32,7 @@
     tags:
       - shell
 
-  - name: Install Asthetics
+  - name: Setup Asthetics
     include: ./ansible/asthetics.yml
     tags:
       - asthetics
