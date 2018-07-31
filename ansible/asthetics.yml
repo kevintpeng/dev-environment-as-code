@@ -25,6 +25,7 @@
     file:
       path: ~/Library/Application\ Support/Firefox/Profiles/default/chrome
       state: directory
+      follow: yes
   - name: (Asthetics) Link userChrome.css
     file:
       dest: ~/Library/Application\ Support/Firefox/Profiles/default/chrome/userChrome.css
