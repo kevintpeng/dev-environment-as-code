@@ -69,7 +69,7 @@ prompt pure
 #source $(dirname $(gem which colorls))/tab_complete.sh
 #alias ls=colorls
 #alias l="colorls -lA --sd"
-alias devup="(cd ~/.dotfiles && git pull) && sudo ansible-playbook ~/.dotfiles/local.yml --extra-vars username=kevintpeng"
+alias devup="(cd ~/.dotfiles && git pull) && sudo ansible-playbook ~/.dotfiles/local.yml --extra-vars username=$(whoami)"
 
 # pretty print json strings
 alias json="python -m json.tool"
