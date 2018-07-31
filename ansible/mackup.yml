@@ -4,4 +4,4 @@
     pkg: mackup
     state: present
 - name: (Mackup) Restore
-  shell: "/usr/bin/yes | mackup restore"
+  shell: "mackup -f restore"
