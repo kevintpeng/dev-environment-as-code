@@ -18,9 +18,8 @@
       - anki
       - steam
       - discord
-      - 1password
+      - https://raw.githubusercontent.com/caskroom/homebrew-cask/fda3b24db9052dcbffa84e40138e355e88343dab/Casks/1password.rb
       - karabiner-elements
-      - flux
       - deluge
       - firefox
       - bettertouchtool
