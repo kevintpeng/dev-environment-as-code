@@ -32,6 +32,7 @@
       - fasd
   - name: (Utilities) Configure fzf with useful key bindings and fuzzy completion
     shell: $(brew --prefix)/opt/fzf/install
+    changed_when: False
   - name: (Utilities) Install tmux
     homebrew:
       name: tmux
@@ -48,6 +49,7 @@
       update: yes
   - name: (Utilities) Install all vim plugins
     shell: vim +PluginInstall +qall
+    changed_when: False
   - name: (Utilities) Install opr and ogh
     gem:
       name: open_git

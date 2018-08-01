@@ -11,18 +11,22 @@
     homebrew_cask:
       pkg: "{{ item }}"
       state: present
-    ignore_errors: True
+      accept_external_apps: yes
     with_items:
       - google-chrome
       - atom
       - anki
       - steam
       - discord
-      - https://raw.githubusercontent.com/caskroom/homebrew-cask/fda3b24db9052dcbffa84e40138e355e88343dab/Casks/1password.rb
       - karabiner-elements
       - deluge
       - firefox
       - bettertouchtool
+    tags:
+      - apps
+  - name: Install 1password 6
+    shell: brew cask install https://raw.githubusercontent.com/caskroom/homebrew-cask/fda3b24db9052dcbffa84e40138e355e88343dab/Casks/1password.rb
+    changed_when: False
     tags:
       - apps
 
