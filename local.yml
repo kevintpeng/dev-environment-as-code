@@ -22,6 +22,7 @@
       - deluge
       - firefox
       - bettertouchtool
+      - iterm2
     tags:
       - apps
   - name: Install 1password 6

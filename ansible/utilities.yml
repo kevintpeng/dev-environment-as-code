@@ -33,15 +33,6 @@
   - name: (Utilities) Configure fzf with useful key bindings and fuzzy completion
     shell: $(brew --prefix)/opt/fzf/install
     changed_when: False
-  - name: (Utilities) Install tmux
-    homebrew:
-      name: tmux
-      state: present
-  - name: (Utilities) Install iTerm2
-    homebrew_cask:
-      pkg: iterm2
-      state: present
-    ignore_errors: True
   - name: (Utilities) Install vundle
     git:
       repo: https://github.com/VundleVim/Vundle.vim.git
