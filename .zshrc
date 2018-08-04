@@ -27,7 +27,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   osx
 #  taskwarrior
-  sudo
   git
   fasd
   zsh-syntax-highlighting
@@ -94,9 +93,6 @@ fi
 if [ -f ~/.zshrc-taskwarrior ]; then
   source ~/.zshrc-taskwarrior
 fi
-
-# set shell color
-base16_default-dark
 
 better_gist() {
   gist $1 | pbcopy && echo "$1 copied!"
