@@ -28,11 +28,11 @@ chunkc set 7_desktop_mode                float
 chunkc set 8_desktop_mode                float
 chunkc set focused_border_skip_floating  1
 
-chunkc set global_desktop_offset_top     2
-chunkc set global_desktop_offset_bottom  2
-chunkc set global_desktop_offset_left    2
-chunkc set global_desktop_offset_right   2
-chunkc set global_desktop_offset_gap     15
+chunkc set global_desktop_offset_top     20
+chunkc set global_desktop_offset_bottom  20
+chunkc set global_desktop_offset_left    20
+chunkc set global_desktop_offset_right   20
+chunkc set global_desktop_offset_gap     20
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -52,11 +52,11 @@ chunkc set window_region_locked          1
 
 # chunkc set mouse_modifier                fn
 
-chunkc set preselect_border_color        0xffd75f5f
+chunkc set preselect_border_color        0xFFa390af
 chunkc set preselect_border_width        10
 chunkc set preselect_border_radius       0
 
-chunkc set focused_border_color          0xFFBA8BAF
+chunkc set focused_border_color          0xFFa390af
 chunkc set focused_border_width          3
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
