@@ -18,6 +18,7 @@
       - .chunkwmrc
       - .skhdrc
       - .mackup.cfg
+      - .sleepscript
   - name: (Dotfiles) create dir .mackup
     file:
       path: ~/.mackup
