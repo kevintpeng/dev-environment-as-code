@@ -48,3 +48,6 @@ nmap <silent> <Leader>mn <Plug>StopMarkdownPreview
 
 " Enable MathJax
 let g:vim_markdown_math = 1
+
+" 2 space tabs
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
