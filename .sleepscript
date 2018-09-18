@@ -1,2 +1,3 @@
+# to be run by sleepwatcher daemon, on laptop lid close
 /usr/bin/yes yes | /usr/local/bin/task stop
 /usr/local/bin/timew stop
