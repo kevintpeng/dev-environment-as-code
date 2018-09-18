@@ -58,6 +58,7 @@
     command: launchctl list de.bernhard-baehr.sleepwatcher
     register: launchctl_sleepwatcher
     ignore_errors: true
+    changed_when: false
 
   - name: (Utilities) Load sleepwatcher launch agent
     command: launchctl load /Library/LaunchAgents/de.bernhard-baehr.sleepwatcher-20compatibility.plist
