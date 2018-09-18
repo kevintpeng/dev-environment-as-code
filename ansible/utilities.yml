@@ -54,6 +54,11 @@
     become: yes
     become_user: root
     become_method: su
-  - name: (Utilities) Daemonize sleepwatcher
-    command: launchctl load /Library/LaunchAgents/de.bernhard-baehr.sleepwatcher-20compatibility.plist
+  - name: (Utilities) Check if sleepwatcher is running
+    command: launchctl list de.bernhard-baehr.sleepwatcher
+    register: launchctl_sleepwatcher
+    ignore_errors: true
 
+  - name: (Utilities) Load sleepwatcher launch agent
+    command: launchctl load /Library/LaunchAgents/de.bernhard-baehr.sleepwatcher-20compatibility.plist
+    when: launchctl_sleepwatcher.rc == 113
