@@ -1,3 +1,2 @@
-#!/bin/bash
-
-/usr/bin/yes | task stop
+/usr/bin/yes yes | /usr/local/bin/task stop
+/usr/local/bin/timew stop
