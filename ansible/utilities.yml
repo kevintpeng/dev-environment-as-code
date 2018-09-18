@@ -30,6 +30,7 @@
       - task
       - timewarrior
       - fasd
+      - sleepwatcher
   - name: (Utilities) Configure fzf with useful key bindings and fuzzy completion
     shell: $(brew --prefix)/opt/fzf/install
     changed_when: False
@@ -45,3 +46,14 @@
     gem:
       name: open_git
       state: present
+  - name: (Utilities) Add sleepwatcher daemon plist
+    file:
+      src: "~/.dotfiles/ansible/de.bernhard-baehr.sleepwatcher-20compatibility.plist"
+      dest: "/Library/LaunchAgents/de.bernhard-baehr.sleepwatcher-20compatibility.plist"
+      state: hard
+    become: yes
+    become_user: root
+    become_method: su
+  - name: (Utilities) Daemonize sleepwatcher
+    command: launchctl load /Library/LaunchAgents/de.bernhard-baehr.sleepwatcher-20compatibility.plist
+
