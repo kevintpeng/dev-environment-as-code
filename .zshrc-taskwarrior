@@ -15,7 +15,7 @@ alias tick=tickle
 
 taskwarrior_next() {
   if [ $# -eq 0 ]; then
-    task limit:8
+    task next limit:8
   else
     task $@
   fi
