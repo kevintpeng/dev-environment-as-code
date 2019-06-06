@@ -75,7 +75,7 @@ alias json="python -m json.tool"
 
 alias atom="atom -a"
 
-alias learn="atom ~/Code/Learn-Something-Every-Day"
+alias learn="atom ~/Code.nosync/Learn-Something-Every-Day"
 
 alias lyrics="open \"https://www.google.com/search?q=\$(spotify status | grep Track | sed 's/Track\: //g')lyrics pinyin\""
 # modify history settings

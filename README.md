@@ -4,8 +4,9 @@ This repo contains both my dotfiles and also ansible scripts to install my setup
 ### Installation
 
 1. install homebrew
-2. install ansible: `brew install ansible`
-3. install pip, npm, bundler, and associated languages
-3. TODO, initialize mackup
-4. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git --extra-vars username=$(whoami)`
-5. run `devup` to pull updates
+1. install ansible: `brew install ansible`
+1. install pip, npm, bundler, and associated languages
+1. TODO, initialize mackup
+1. `sudo ansible-pull -U https://github.com/kevintpeng/dotfiles.git --extra-vars username=$(whoami)`
+1. Manually import touchbar presets
+1. run `devup` to pull updates
