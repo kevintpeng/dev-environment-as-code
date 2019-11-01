@@ -99,3 +99,6 @@ better_gist() {
 }
 
 alias gist=better_gist
+
+# adds fast delete previous word to match other GUI applications
+bindkey '^H' backward-kill-word
