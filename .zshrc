@@ -104,3 +104,6 @@ alias gist=better_gist
 export GO111MODULE=on
 
 alias gb="git branch --sort=-committerdate --all"
+
+# adds fast delete previous word to match other GUI applications
+bindkey '^H' backward-kill-word
