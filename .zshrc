@@ -99,3 +99,8 @@ better_gist() {
 }
 
 alias gist=better_gist
+
+# use gomodules when in GOPATH
+export GO111MODULE=on
+
+alias gb="git branch --sort=-committerdate --all"
