@@ -24,15 +24,15 @@ chunkc core::unload border.so
 chunkc set window_fade_duration          0.1
 chunkc set global_desktop_mode           bsp
 
-chunkc set 7_desktop_mode                float
-chunkc set 8_desktop_mode                float
+chunkc set 5_desktop_mode                float
+chunkc set 6_desktop_mode                float
 chunkc set focused_border_skip_floating  1
 
 chunkc set global_desktop_offset_top     0
 chunkc set global_desktop_offset_bottom  0
 chunkc set global_desktop_offset_left    0
 chunkc set global_desktop_offset_right   0
-chunkc set global_desktop_offset_gap     15
+chunkc set global_desktop_offset_gap     5
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0

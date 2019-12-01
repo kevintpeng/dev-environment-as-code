@@ -1,6 +1,3 @@
-# close focused window
-ctrl - w : chunkc tiling::window --close
-
 # focus window
 ctrl - h : chunkc tiling::window --focus west
 ctrl - j : chunkc tiling::window --focus south
@@ -74,16 +71,16 @@ ctrl + cmd - 8 : chunkc tiling::window --send-to-desktop 7; qes -k "ctrl - 8"
 #ctrl + cmd - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 #
 ## increase region size
-ctrl + shift - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-ctrl + shift - j : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-ctrl + shift - k : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-ctrl + shift - l : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+ctrl + shift - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+ctrl + shift - j : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+ctrl + shift - k : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+ctrl + shift - l : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
 #
 ## decrease region size
-#shift + ctrl - h : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
-#shift + ctrl - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
-#shift + ctrl - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
-#shift + ctrl - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+#shift + ctrl - h : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+#shift + ctrl - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+#shift + ctrl - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+#shift + ctrl - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
 #
 ## set insertion point for focused container
 #ctrl + alt - f : chunkc tiling::window --use-insertion-point cancel
