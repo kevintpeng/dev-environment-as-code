@@ -1,0 +1,6 @@
+#!/bin/bash
+
+yabai -m config layout bsp
+yabai -m config --space 5 layout float
+
+
