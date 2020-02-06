@@ -107,3 +107,4 @@ alias gb="git branch --sort=-committerdate --all"
 
 # adds fast delete previous word to match other GUI applications
 bindkey '^H' backward-kill-word
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
