@@ -7,6 +7,12 @@
     homebrew:
       name: yabai
       state: present
+  - name: (Window Manager) Install yabai script additions
+    shell: sudo yabai --install-sa
+  - name: (Window Manager) Brew services start yabai
+    shell: brew services start yabai
+  - name: (Window Manager) Restart Dock
+    shell: killall Dock
   - name: (Window Manager) Install skhd
     homebrew:
       pkg: koekeishiya/formulae/skhd
