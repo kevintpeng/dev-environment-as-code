@@ -1,11 +1,11 @@
   # WINDOW MANAGER
-  - name: (Window Manager) Tap chunkwm
+  - name: (Window Manager) Tap yabai
     homebrew_tap:
-      name: crisidev/homebrew-chunkwm
+      name: koekeishiya/formulae
       state: present
-  - name: (Window Manager) Install chunkwm
+  - name: (Window Manager) Install yabai
     homebrew:
-      name: chunkwm
+      name: yabai
       state: present
   - name: (Window Manager) Install skhd
     homebrew:
