@@ -13,13 +13,7 @@
       state: present
       accept_external_apps: yes
     with_items:
-      - google-chrome
-      - atom
-      - anki
-      - steam
-      - discord
       - karabiner-elements
-      - deluge
       - firefox
       - bettertouchtool
       - iterm2
