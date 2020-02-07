@@ -19,7 +19,7 @@
       - .skhdrc
       - .mackup.cfg
       - .sleepscript
-      - .yabai
+      - .yabairc
   - name: (Dotfiles) create dir .mackup
     file:
       path: ~/.mackup

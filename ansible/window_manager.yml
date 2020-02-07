@@ -1,4 +1,8 @@
   # WINDOW MANAGER
+  - name: (Window Manager) install jq dependency
+    homebrew:
+      name: jq
+      state: present
   - name: (Window Manager) Tap yabai
     homebrew_tap:
       name: koekeishiya/formulae

@@ -1,6 +1,42 @@
 #!/bin/bash
 
 yabai -m config layout bsp
-yabai -m config --space 5 layout float
+yabai -m config --space 1 layout float
 
+# prefer spawn left/top
+yabai -m config window_placement first_child
+
+# mouse focus on window
+yabai -m config mouse_follows_focus on
+# yabai -m config focus_follows_mouse autoraise
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+# window opacity (default: off)
+# example: render all unfocused windows with 90% opacity
+yabai -m config window_opacity on
+yabai -m config window_opacity_duration 0
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.6
+
+# - width has unit 1pt
+# - colors for borders are in the format AARRGGBB (alpha, red, green, blue)
+#    as a hexadecimal value
+# - active means focused window, normal means unfocused window,
+#    insert means selected window
+# window radius (default: -1)
+# - radius has unit 1pt
+# - value of `-1` tells yabai to calculate a radius automatically
+# - other valid values are `0 .. 20` inclusive, use `0` for square-borders and anything above (up to 20) for rounded.
+yabai -m config window_border off
+yabai -m config window_border_width 3
+yabai -m config window_border_radius -1.0
+yabai -m config active_window_border_color 0xff6c00ab
+yabai -m config normal_window_border_color 0xff505050
+yabai -m config insert_window_border_color 0xffd75f5f
 
