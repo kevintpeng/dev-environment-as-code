@@ -1,3 +1,8 @@
+# remove zsh history size limits
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
 # Base16 Shell, for coloring asthetic
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
