@@ -1,8 +1,8 @@
   # ASTHETICS
-  #- name: (Asthetics) Tap Hack Nerd Font
-  #  homebrew_tap:
-  #    name: caskroom/fonts
-  #    state: present
+ - name: (Asthetics) Tap Hack Nerd Font
+   homebrew_tap:
+     name: homebrew/cask-fonts
+     state: present
   - name: (Asthetics) install hack-nerd-font
     homebrew_cask:
       pkg: font-hack-nerd-font
