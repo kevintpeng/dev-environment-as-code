@@ -9,7 +9,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 # fix colors in tmux
-# export TERM="xterm-256color"
+export TERM="xterm-256color"
 # if [ "$TMUX" = "" ]; then tmux -2; fi
 
 # Path to your oh-my-zsh installation.
